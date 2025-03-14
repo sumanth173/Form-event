@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form-event</title>
+    <style>
+      body {
+        text-align: center;
+        background-color: grey;
+        color: white;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+      .submit:hover {
+        background-color: black;
+        color: white;
+      }
+      .submit {
+        border-radius: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Form-Event-Function</h1>
+    <form id="form">
+      <label>Enter any number:</label>
+      <input type="text" id="number" />
+      <input class="submit" type="submit" name="" id="" />
+      <h3 id="id"></h3>
+      <script>
+        let x = document.getElementById("form");
+        let h3 = document.getElementById("id");
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          let num = document.getElementById("number").value;
+          if (!isNaN(num)) {
+            if (num % 2 == 0) {
+              h3.innerHTML = "Its an Even number";
+            } else {
+              h3.innerHTML = "Its an Odd number";
+            }
+          } else {
+            h3.innerHTML = "Please enter the valid number";
+          }
+        });
+      </script>
+    </form>
+  </body>
+</html>
